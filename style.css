@@ -1,0 +1,75 @@
+/* ===== reset ===== */
+* {
+  box-sizing: border-box;
+}
+
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul { list-style: none; }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== base ===== */
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== hero ===== */
+#hero{
+  height: 80vh;
+  background: url("mainvisual.jpeg") center/cover no-repeat;
+  position: relative;
+
+  display:flex;  /* flexの中央寄せは親指定 */
+  justify-content: center; /* 横中央 */
+  align-items: center;  /* 縦中央 */
+}
+
+/* 暗幕 */
+#hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.1.8);
+}
+
+/* テキストを前に */
+.hero_text{
+  position: relative; /* 暗幕より前 */
+  color: #2c31ab;
+  text-align: center;
+  padding:24px;
+
+  
+  /* 四角背景 */
+  background: rgba(255,255,255,0.72);
+  padding:60px 80px;
+  border-radius: 30px;
+  /* 四角背景の影 */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4),/* 外の影 */
+              inset 0 0 0 5px rgba(255,255,255,0.6); /* 内側の線 */ 
+  
+}
+.hero_text h1{
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;  
+  font-size: 42px;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+}
+
+.hero_text p{
+  padding-top:30px;
+}
