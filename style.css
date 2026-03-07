@@ -42,7 +42,7 @@ a {
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,0.1.8);
+  background: rgba(0,0,0,0.18);
 }
 
 /* テキストを前に */
@@ -94,9 +94,13 @@ a {
  align-items: center;
  gap:10px;
 
- padding:14px 18px;
+ padding:18px 18px;
  border-radius: 16px;
  background: rgba(104, 166, 237, 0.55);
+
+  width:165px;   /* 大きさ固定*/
+
+  transition: transform .2s, box-shadow .2s, background .2s;
 }
 
 .nav_list a:hover{
@@ -110,29 +114,213 @@ a {
   height:5rem;
   object-fit:cover;
   border-radius: 50%;
+
+  transition: transform .2s;
 }
 
 .nav_list span{
-  font-size:14px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: bold;
+  font-size:20px;
   letter-spacing: 0.06rem;
+
+  transition: 0.3s;
 }
 
+.nav_list a:hover span{
+  color:#2c31ab;
+}
 
+.nav_list a:hover img{
+  transform: scale(1.08);
+}
+
+/* ===== area ===== */
+/* 共通 */
+#area{
+  margin-top:100px;
+  padding:80px 0;
+  background-color: rgba(29, 147, 190, 0.1);
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 30px;
+}
+
+.area_flex{
+  margin-bottom:80px;
+  display:flex;
+  gap:80px;
+
+  align-items:center;
+}
+
+.area_img,
+.area_text{
+  flex:1;
+}
+
+.area_img{
+ background: #2c31ab;
+  border-radius: 16px;
+  padding:5px;
+}
+
+.area_text{
+  background: rgba(255,255,255,0.72);
+  border-radius: 16px;
+  padding:20px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06),/* 外の影 */
+              inset 0 0 0 5px rgba(255,255,255,0.6); /* 内側の線 */ 
+}
+
+.area_img img{
+  width: 100%;
+  height: 320px;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px; /* 枠の内側なので少し小さめが上品 */
+}
+
+.area_flex.reverse{
+  flex-direction: row-reverse;
+}
+
+/* ===== フッター ===== */
+#footer{
+  margin-top:180px;
+  padding:60px 16px;
+}
+
+#footer .nav_list a{
+width:100px; height:120px; padding:18px 12px; 
+
+  transition: transform .2s;
+}
+
+#footer .nav_list span{
+ font-size:10px;
+
+  transition: 0.3s;
+}
+
+#footer .nav_list img{
+ width:3rem; height:3rem; 
+
+  transition: transform .2s;
+}
+
+#footer .nav_list a:hover{
+  transform:translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18); 
+  background: rgba(225, 233, 157, 0.75); 
+}
+#footer .nav_flex{
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ gap:30px;
+}
+
+.to_top{
+  margin-top:20px;
+  
+  display:block;
+  font-size:24px;
+  color:rgba(139, 128, 128, 0.72);
+  border-bottom:solid 1px rgba(139, 128, 128, 0.72);
+
+  cursor:pointer;
+}
+#footer .to_top:hover{
+  transform:translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18); 
+  background: rgba(225, 233, 157, 0.75); 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== レスポンシブ ===== */
 @media screen and (max-width: 834px){
 
-  #nav{
+#nav,
+#footer{
   margin:20px;
   padding:30px 16px;
 }
-  .nav_flex ul{
+.hero_text h1{
+  font-size: 32px;
+  letter-spacing: 0.08em;
+}
+.hero_text{
+/* 四角背景 */
+  padding:40px 40px;
+}
+
+#nav{
+  margin-top:80px;
+  margin-bottom:30px;
+}
+
+.nav_flex ul{
     flex-direction: column;
     gap: 20px;
   }
-  
-  /* リストの色を狭める */
-  .nav_list{
+
+    /* リストの色を狭める */
+.nav_list{
     flex-direction: column;
     align-items: center;  /* ← これ追加 */
     gap: 20px;
   }
+
+
+#area{
+  padding-top:120px;
+  margin-bottom:20px;
+  padding-bottom:0;
+}
+.area_flex{
+  margin-bottom:100px;
+}
+
+.area_img img{
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px; /* 枠の内側なので少し小さめが上品 */
+}
+
+
+  .container{
+    margin-right: 16px;
+    margin-left: 16px;
+    padding-bottom:50px;
+}
+
+  .area_flex,
+  .area_flex.reverse{
+  flex-direction:column;
+}
+
+#footer .nav_flex ul{
+    flex-direction: row;
+    gap: 30px;
+    justify-content:right;
+    margin-right:20px;
+  }
+
+ #footer .nav_flex{
+ gap:20px;
+}
+.to_top{
+  font-size:18px;
+   justify-content:left;
+}
 }
