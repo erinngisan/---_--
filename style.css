@@ -150,7 +150,7 @@ a {
 }
 
 .area_flex{
-  margin-bottom:80px;
+  margin-bottom:150px;
   display:flex;
   gap:80px;
 
@@ -171,10 +171,16 @@ a {
 .area_text{
   background: rgba(255,255,255,0.72);
   border-radius: 16px;
-  padding:20px;
-
+  padding:20px 40px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.06),/* 外の影 */
               inset 0 0 0 5px rgba(255,255,255,0.6); /* 内側の線 */ 
+}
+
+.area_text h2{
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: bold;
+  color: #2c31ab;
 }
 
 .area_img img{
@@ -312,7 +318,7 @@ html {
 #footer .nav_flex ul{
     flex-direction: row;
     gap: 30px;
-    justify-content:right;
+    justify-content:flex-end;
     margin-right:20px;
   }
 
